@@ -1,0 +1,12 @@
+html,body,.view{
+      height: 100%;
+}
+#uname{
+      background-color:transparent;
+      color: white;
+      border: none;
+      outline: none;
+      height: 30px;
+      box-shadow: 0px 2px 0px 0px #fff;
+      transition: height 1s;
+}

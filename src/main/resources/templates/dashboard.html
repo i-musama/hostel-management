@@ -1,0 +1,401 @@
+<!DOCTYPE html >
+<html dir="ltr" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
+    <meta name="description"
+        content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>SUKKUR IBA HOSTELS</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" th:href="@{https://www.wrappixel.com/templates/ample-admin-lite/}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/plugins/images/sibalogo.jpg" th:href="@{/plugins/images/sibalogo.jpg}" >
+    <link href="/plugins/bower_components/chartist/dist/chartist.min.css"  th:href="@{/plugins/bower_components/chartist/dist/chartist.min.css}" rel="stylesheet">
+    <link rel="stylesheet" href="/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css" th:href="@{/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css}">
+    <link href="/css/style.min.css" th:href="@{/css/style.min.css}" rel="stylesheet">
+</head>
+
+<body onload="updateStudentHistory()">
+<!--/*@thymesVar id="complain" type="com.example.hostelmanagemant.models.Complain"*/-->
+
+<!--/*@thymesVar id="student" type="com.example.hostelmanagemant.models.Student"*/-->
+       <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+   
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin6">
+
+
+
+
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" href="dashboard.html" th:href="@{/dashboard/main}">
+                        <!-- Logo icon -->
+                        <b class="logo-icon">
+                            <!-- Dark Logo icon -->
+                            <img src="/plugins/images/sibalogo.jpg" th:src="@{/plugins/images/sibalogo.jpg}" alt="homepage" width="50" height="50"/>
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span class="logo-text">
+                            <!-- dark Logo text -->
+                            <img src="/plugins/images/pic.PNG" th:src="@{/plugins/images/pic.PNG}" alt="homepage" width="180" height="50" />
+                        </span>
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
+                        href="javascript:void(0)" ><i class="ti-menu ti-close"></i></a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                   
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav ms-auto d-flex align-items-center">
+
+                       
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        <li>
+                            <a class="profile-pic" href="#">
+                                <img src="/plugins/images/users/p.jpg" th:src="@{/plugins/images/users/p.jpg}" alt="user-img" width="36"
+                                     class="img-circle"><span class="text-white font-medium">USER </span></a>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav ">
+                        <!-- User Profile-->
+                        <li class="sidebar-item pt-2">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.html" th:href="@{/dashboard/main}"
+                                aria-expanded="false">
+                                <i class="far fa-clock" aria-hidden="true"></i>
+                                <span class="hide-menu">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item ">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#"
+                                aria-expanded="false">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <span class="hide-menu">Room Allocation</span>
+
+                            </a>
+
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/room.html" th:href="@{/rooms/}"
+                               aria-expanded="false">
+                                <i class="fa fa-table" aria-hidden="true"></i>
+                                <span class="hide-menu">View Room</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#"
+                               aria-expanded="false">
+                                <i class="fa fa-font" aria-hidden="true"></i>
+                                <span class="hide-menu">Allocte Room</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#"
+                               aria-expanded="false">
+                                <i class="fa fa-globe" aria-hidden="true"></i>
+                                <span class="hide-menu">Change Room</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#"
+                                aria-expanded="false">
+                                <i class="fa fa-columns" aria-hidden="true"></i>
+                                <span class="hide-menu">Complain System</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#"
+                                aria-expanded="false">
+                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                <span class="hide-menu">Individual Complain System</span>
+                            </a>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#"
+                                    aria-expanded="false">
+                                    <i class="fa fa-columns" aria-hidden="true"></i>
+                                    <span class="hide-menu">Individual Complain System</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item dropdown">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="UserReg/form.html" th:href="@{/user/login}"
+                                    aria-expanded="false">
+                                    <i class="fa fa-columns" aria-hidden="true"></i>
+                                    <span class="hide-menu">Login</span>     </a>
+                            </li>
+
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="UserReg/signup.html" th:href="@{/user/signup}"
+                                    aria-expanded="false">
+                                    <i class="fa fa-columns" aria-hidden="true"></i>
+                                    <span class="hide-menu">SignUp</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="UserReg/form.html" th:href="@{/user/login}"
+                                    aria-expanded="false">
+                                    <i class="fa fa-columns" aria-hidden="true"></i>
+                                    <span class="hide-menu">logout</span>
+                                </a>
+                            </li>
+                    </ul>
+
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb bg-white">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Dashboard</h4>
+                    </div>
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                       
+                    </div>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+                     
+            <div class="container-fluid">
+             
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title" >Total Rooms</h3>
+                            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                                <li>
+                                    <div id="sparklinedash"><canvas width="67" height="30"
+                                            style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
+                                    </div>
+                                </li>
+                                <li class="ms-auto"><span class="counter text-success" th:text="${totalRooms}" >600</span></li>
+                            </ul>
+                            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                                <li>
+                                    <h6 class="ms-auto text-dark">Allocated Rooms</h6>
+                                </li>
+                                <li class="ms-auto"><span class=" text-success" th:text="${allocatedRooms}">600</span></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">Total Rooms Capacity </h3>
+                            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                                <li>
+                                    <div id="sparklinedash2"><canvas width="67" height="30"
+                                            style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
+                                    </div>
+                                </li>
+                                <li class="ms-auto"><span class="counter text-purple" th:text="${totalCapacity}">450</span></li>
+                            </ul>
+
+                            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                                <li>
+                                    <h6 class="ms-auto text-dark">Available Capacity</h6>
+                                </li>
+                                <li class="ms-auto"><span class=" text-purple" th:text="${availableCapacity}">600</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">Total Complains</h3>
+                            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                                <li>
+                                    <div id="sparklinedash3"><canvas width="67" height="30"
+                                            style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
+                                    </div>
+                                </li>
+                                <li class="ms-auto"><span class="counter text-info" th:text="${totalComplains}">91</span>
+                                </li>
+                            </ul>
+
+                            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                                <li>
+                                    <h6 class="ms-auto text-dark">Resolved Complains</h6>
+                                </li>
+                                <li class="ms-auto"><span class=" text-info" th:text="${resolvedComplains}">5</span></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+              
+                <!-- RECENT STUDENT HISTORY -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12">
+                        <div class="white-box">
+                            <div class="d-md-flex mb-3">
+                                <h3 class="box-title mb-0">Recent Students History</h3>
+                                <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
+                                    <select class="form-select shadow-none row border-top" onchange="updateStudentHistory()">
+                                        <option>March 2021</option>
+                                        <option>April 2021</option>
+                                        <option>May 2021</option>
+                                        <option>June 2021</option>
+                                        <option>July 2021</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table no-wrap">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-top-0">Student Id</th>
+                                            <th class="border-top-0">Name of Student</th>
+                                            <th class="border-top-0">Status of Room </th>
+                                            <th class="border-top-0"> joing Date</th>
+                                            <th class="border-top-0">Fee Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="studentHistory" >
+                                        <tr th:each="student : ${students}">
+                                            <td th:text="${student.getStudent_id()}">1</td>
+                                            <td th:text="${student.getFirstName() + ' ' + student.getLastName() }">Recipe-name</td>
+                                            <td th:text="${(student.getRoom() != null)? 'Room Allocated': 'Not Allocated'}">Not Allocated</td>
+                                            <td class="txt-oflo" th:text="${student.getJoiningDate()}">April 18, 2021</td>
+                                            <td>
+                                                <span class="text-success" th:if="${student.getFeeStatus() == T(com.example.hostelmanagemant.models.FeeStatus).PAID}" th:text="${student.getFeeStatus()}">Paid</span>
+                                                <span class="text-info" th:if="${student.getFeeStatus() == T(com.example.hostelmanagemant.models.FeeStatus).HALF_PAID}" th:text="${student.getFeeStatus()}">Half Paid</span>
+                                                <span class="text-danger" th:if="${student.getFeeStatus() == T(com.example.hostelmanagemant.models.FeeStatus).NOT_PAID}" th:text="${student.getFeeStatus()}">Not Paid</span>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- Complains -->
+                <!-- ============================================================== -->
+                <div class="row justify-content-center">
+                    <!-- .col -->
+                    <div class="col-md-12 col-lg-8 col-sm-12">
+                        <div class="card white-box p-0">
+                            <div class="card-body">
+                                <h3 class="box-title mb-0">Complains of Studnets</h3>
+                            </div>
+                            <div class="comment-widgets" th:each="complain : ${complains}">
+                                <!-- Comment Row -->
+
+                                <div class="d-flex flex-row comment-row p-3 mt-0">
+                                    <div class="p-2"><img src="/plugins/images/users/d3.jpg" th:src="${complain.getStudent().getImageURL()}" alt="user" width="50" class="rounded-circle"></div>
+                                    <div class="comment-text ps-2 ps-md-3 w-100">
+                                        <h5 class="font-medium" th:text="${complain.getStudent().getFirstName()}">Riya</h5>
+                                        <span class="mb-3 d-block" th:text="${complain.getMessage()}">Complain about new side table </span>
+                                        <div class="comment-footer d-md-flex align-items-center">
+                                             <span class="badge bg-secondary rounded m-2" th:if="${complain.getComplainType() == T(com.example.hostelmanagemant.models.ComplainType).INDIVIDUAL}" th:text="${complain.getComplainType()}">Individual Complain</span>
+                                             <span class="badge bg-primary rounded m-2" th:if="${complain.getComplainType() == T(com.example.hostelmanagemant.models.ComplainType).GENERAL}"  th:text="${complain.getComplainType()}">GENERAL Complain</span>
+
+                                            <span class="badge bg-warning rounded m-2" th:if="${complain.getComplainStatus() == T(com.example.hostelmanagemant.models.ComplainStatus).PENDING}"  th:text="${complain.getComplainStatus()}">Pending</span>
+                                            <span class="badge bg-danger rounded m-2" th:if="${complain.getComplainStatus() == T(com.example.hostelmanagemant.models.ComplainStatus).REJECTED}"  th:text="${complain.getComplainStatus()}">Rejected</span>
+                                            <span class="badge bg-success rounded m-2" th:if="${complain.getComplainStatus() == T(com.example.hostelmanagemant.models.ComplainStatus).APPROVED}"  th:text="${complain.getComplainStatus()}">Approved</span>
+                                             <div class="text-muted fs-2 ms-auto mt-2 mt-md-0" th:text="${complain.getComplainTime()}">April 14, 2021</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer text-center"> 2021 © SUKKUR IBA UNIVERITY <a
+                    href="#">SIBU</a>
+            </footer>
+          
+        </div>
+         </div>
+    </div>
+    <script src="/plugins/bower_components/jquery/dist/jquery.min.js" th:src="@{/plugins/bower_components/jquery/dist/jquery.min.js}"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="/bootstrap/dist/js/bootstrap.bundle.min.js" th:src="@{/bootstrap/dist/js/bootstrap.bundle.min.js}"></script>
+    <script src="/js/app-style-switcher.js" th:src="@{/js/app-style-switcher.js}"></script>
+    <script src="/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js" th:src="@{/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js}"></script>
+    <!--Wave Effects -->
+    <script src="/js/waves.js" th:src="@{/js/waves.js}"></script>
+    <!--Menu sidebar -->
+    <script src="/js/sidebarmenu.js" th:src="@{/js/sidebarmenu.js}"></script>
+    <!--Custom JavaScript -->
+    <script src="/js/custom.js" th:src="@{/js/custom.js}"></script>
+    <!--This page JavaScript -->
+    <!--chartis chart-->
+    <script src="/plugins/bower_components/chartist/dist/chartist.min.js" th:src="@{/plugins/bower_components/chartist/dist/chartist.min.js}"></script>
+    <script src="/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js" th:src="@{/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js}"></script>
+    <script src="/js/pages/dashboards/dashboard1.js" th:src="@{/js/pages/dashboards/dashboard1.js}"></script>
+    <script>
+        function updateStudentHistory() {
+
+            $.get("/dashboard/student-history").done(function(fragment) { // get from controller
+                $("#studentHistory").replaceWith(fragment); // update snippet of page
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  height: 100vh;
+}
+/* 
+====================================
+===========TOP NAVBAR===============
+==================================== */
+
+/* .navbar {
+  background-color: rgb(248, 248, 248);
+  padding: 1em;
+  height: 10%;
+  width: 100%;
+  box-shadow: 0 1px 1px -1px rgba(100, 52, 52, 0.5);
+}
+.navbar h1 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  color: rgb(103, 103, 221);
+} */
+
+/* 
+====================================
+===========SIDE BAR===============
+==================================== */
+
+.mainsidebar {
+  display: flex;
+  height: 100%;
+}
+.sidebar {
+  width: 16em;
+  background-color: rgb(248, 248, 248);
+  font-size: 0.875rem;
+  font-weight: bold;
+
+  box-shadow: 0 0 1px 0 rgba(100, 52, 52, 1);
+}
+.sidebar ul li {
+  list-style: none;
+  padding: 1em;
+  margin: 1em 0;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+.sidebar ul li:hover {
+  background-color: rgb(218, 214, 214);
+}
+
+.sidebar ul li a {
+  color: black;
+  text-decoration: none;
+  letter-spacing: 1px;
+  margin: 0 0.5em;
+}
+
+.dashb {
+  background-color: rgb(201, 224, 247);
+  padding: 1.5em;
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: rgb(14, 88, 148);
+}
+
+/* 
+====================================
+===========DASHBOARD HEADING===============
+==================================== */
+
+.center {
+  padding: 1em;
+  width: 100%;
+}
+
+.dashHeading {
+  height: 15%;
+}
+
+/* 
+====================================
+===========CARDS===============
+==================================== */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1em;
+}
+@media (max-width: 1100px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.card-container {
+  width: 20rem;
+}
+.card-content {
+  background-color: rgb(48, 121, 181);
+  border-radius: 10px 10px 0 0;
+  padding: 2em;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-content i {
+  font-size: 4rem;
+}
+.content {
+  text-align: end;
+}
+.card-content h2 {
+  font-size: 4rem;
+}
+.card-content p {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.detail {
+  font-weight: bold;
+  background-color: white;
+  color: rgb(48, 121, 181);
+  padding: 1em;
+  border-radius: 0 0 10px 10px;
+  border: 1px solid rgb(48, 121, 181);
+  cursor: pointer;
+}
+.card-content.green {
+  background-color: rgb(90, 183, 90);
+}
+.card-content.yellow {
+  background-color: rgb(238, 172, 75);
+}
+.card-content.red {
+  background-color: rgb(215, 82, 77);
+}
+
+.detail.green {
+  color: rgb(90, 183, 90);
+  border: 1px solid rgb(90, 183, 90);
+}
+.detail.yellow {
+  color: rgb(238, 172, 75);
+  border: 1px solid rgb(238, 172, 75);
+}
+.detail.red {
+  color: rgb(215, 82, 77);
+  border: 1px solid rgb(215, 82, 77);
+}
+
+/* 
+====================================
+===========notice board===============
+==================================== */
+.noticeboard {
+  margin-top: 2em;
+  min-width: 40rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nt-p {
+  text-transform: uppercase;
+  padding: 1em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: white;
+  background-color: rgb(48, 121, 181);
+}
+
+.notice-container {
+  border: 1px solid rgb(216, 212, 212);
+}
+.notice-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.5em;
+  background-color: rgb(219, 238, 210);
+  margin: 1.5em 1em;
+}
+.notice-content h3 {
+  color: rgb(67, 170, 16);
+}
+.notice-content span {
+  color: rgb(67, 170, 16);
+}
+.top-notice {
+  padding: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: rgba(207, 216, 202, 0.349);
+}
